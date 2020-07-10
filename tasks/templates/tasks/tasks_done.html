@@ -1,0 +1,19 @@
+<div id="todo-items-done">
+  <h4>Done Tasks</h4>
+  {% if tasks_done %}
+    {% for task in tasks_done %}
+    <div class="todo-item">
+      <div class="todo-item-cb">
+        <input type="checkbox" id="item{{ task.id }}" onclick="location.href='{% url "task-update-status" task.id %}'" checked/>
+        <label for="item{{ task.id }}">{{ task.name }}</label>
+      </div>
+      <div class="todo-item-action">
+        <a href="{% url 'task-update' task.id %}"><i class="fas fa-edit"></i></a>
+        <a href="{% url 'task-delete' task.id %}"><i class="fas fa-trash"></i></a>
+      </div>
+    </div>
+    {% endfor %}
+  {% else %}
+    <p class="text-center my-2">No tasks completed yet</p>
+  {% endif %}
+</div>

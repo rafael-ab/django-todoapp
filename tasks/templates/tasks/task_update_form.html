@@ -1,0 +1,15 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+
+<form id="todo-form" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+      {{ field }}
+    {% endfor %}
+    <button type="submit" class="btn">Update Item</button>
+</form>
+
+<a href="{% url 'todo' %}" class="btn-simple text-center">Return</a>
+
+{% endblock content %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoApp</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?5411" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="todo-header">
+        <h1><a href="{% url 'todo' %}" class="btn-anchor">TodoApp</a></h1>
+      </div>
+      <div id="todo-body">
+        {% block content %} {% endblock content %}
+      </div>
+    </div>
+    {% block javascript %} {% endblock javascript %}
+  </body>
+</html>
